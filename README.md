@@ -39,7 +39,7 @@ npm install
 npm run dev
 ```
 
-##📝 Features
+## 📝 Features
 🔍 Search bar to query Pokémon by name
 
 📊 Fetches data from a public Pokémon API
@@ -48,19 +48,24 @@ npm run dev
 
 📱 Responsive design using TailwindCSS
 
+---
 
-##📅 Development Log
+## 📅 Development Log
 
 Date | Progress
 2025-04-28 | Rebuilt base project with React + TS + Tailwind scaffold
 2025-04-29 | Implemented basic search functionality and API fetching
 TBD | Optimize API calls and local storage logic
 
-##🐞 Challenges & Solutions
+---
+
+## 🐞 Challenges & Solutions
 Problem: API was being called too frequently when typing in the search bar
 Solution: Planning to implement debouncing to reduce API calls and improve performance
 
-##✨ Future Improvements
+---
+
+## ✨ Future Improvements
  Add smooth animations and transitions for loading/search results
 
  Switch to a Pokémon card API and display actual card visuals
@@ -71,11 +76,17 @@ Solution: Planning to implement debouncing to reduce API calls and improve perfo
 
  Build a history/favorites feature for searched Pokémon
 
-##📸 Screenshots
+ ---
+
+## 📸 Screenshots
 Coming Soon
 
-##📜 License
+---
+
+## 📜 License
 This project is licensed under the MIT License.
 
-##🙌 Acknowledgements
+---
+
+## 🙌 Acknowledgements
 PokéAPI — for providing open access to Pokémon data
