@@ -1,4 +1,3 @@
-
 // This type is used to define the structure of a single Pokemon object
 export type Pokemon = {
     id: number,
