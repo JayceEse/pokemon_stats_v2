@@ -1,4 +1,4 @@
-import React from 'react'
+import PokemonCard from './components/PokemonCard'
 
 
 // Pokemon Object
@@ -11,7 +11,7 @@ const bulbasaur = {
 
 function App() {
   return (
-    <div>Hello World</div>
+    <PokemonCard pokemons={bulbasaur}/>
   )
 }
 

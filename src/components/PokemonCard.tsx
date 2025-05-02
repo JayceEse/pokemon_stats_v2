@@ -6,7 +6,7 @@ type Props = {
 }
 
 // Displays each vaule inside object per single pokemon
-function PokemonRow({pokemons} : Props) {
+function PokemonCard({pokemons} : Props) {
     return (
             <>
             <div>{pokemons.id}</div>
@@ -19,4 +19,4 @@ function PokemonRow({pokemons} : Props) {
     )
 }
 
-export default PokemonRow
+export default PokemonCard
