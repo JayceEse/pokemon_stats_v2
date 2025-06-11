@@ -2,11 +2,14 @@ import {PokemonService} from '../types/PokemonTypes'
 
 // Props to handle expected data structure 
 type Props = {
-    pokemons: PokemonService
+    pokemon: PokemonService
 }
 
 // Displays each vaule inside object per single pokemon
-function PokemonCard({pokemons} : Props) {
+function PokemonCard({pokemon} : Props) {
+
+    const imageUrl = pokemon.sprites.other?.['official-artwork']?.front_default || pokemon.sprites.front_default;
+
     return (
             <>
             <div>{pokemons.name}</div>

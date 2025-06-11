@@ -1,25 +1,19 @@
 import { PokemonService } from "../types/PokemonTypes"
 import PokemonCard from "./PokemonCard"
 
-// Props to handle data structure in a array
+// Props to handle expected pokeons
 type Props = {
     manyPokemon: PokemonService[]
 }
 
 const PokemonTable = ({manyPokemon}: Props) => {
-    //Function to render each pokemon
-    const renderPokemon = () => {
-        return (
-            manyPokemon.map((pokemon) => {
-                return (
-                    <PokemonCard pokemons={pokemon}/>
-                )
-            })
-        )
-    }
-
+    // map each pokemon to a card in the table
   return (
-    <div>{renderPokemon()}</div>
+    <div>
+        {manyPokemon.map((pokemon) => (
+            <PokemonCard pokemon={pokemon}/>
+        ))}
+    </div>
   )
 }
 
