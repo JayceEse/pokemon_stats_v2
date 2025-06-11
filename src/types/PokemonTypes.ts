@@ -19,7 +19,7 @@ export type PokemonDetails = {
     sprites: {
         front_default: string,
         other?: {
-            'offical-artwork'?:{
+            'official-artwork'?:{
                 front_default: string
             }
         }

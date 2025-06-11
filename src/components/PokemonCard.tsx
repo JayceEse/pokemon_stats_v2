@@ -12,8 +12,12 @@ function PokemonCard({pokemon} : Props) {
 
     return (
             <>
-            <div>{pokemons.name}</div>
-            <img src={pokemons.sprites.front_default} alt="Pokemon sprite" />
+            <div>{pokemon.id}</div>
+            <div>{pokemon.name}</div>
+            {imageUrl && <img src={imageUrl} alt={`${pokemon.name} sprite`}/>}
+            <div>
+                {pokemon.types.type.name}
+            </div>
             </>
     )
 }
