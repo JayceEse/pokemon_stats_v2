@@ -44,25 +44,35 @@ import { PokemonService } from './types/PokemonTypes'
 function App() {
 
   const [pokemonArray, setPokemonArray] = useState<PokemonService[]>([]) //this sets state
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const fetchPokemon = async () => {
       try {
+        setLoading(true)
         const data = await getManyPokemon() //calls api
+        console.log("fetching data:", data)
         return setPokemonArray(data) //updates state and applys pokemon data
-        console.log(data)
       } catch (error) {
-        throw new Error("unable to fetch Pokemon");
+        console.log("unable to fetch Pokemon", error);
+        setError("Failed to load Pokemon data")
+      } finally {
+        setLoading(false)
       }
     }
 
     fetchPokemon()
   }, [])
   
-  
+  if (loading) return <div>Loading Pokemon...</div>
+  if (error) return <div>{error}</div>
+  if (pokemonArray.length === 0) return <div>No Pokemon found</div>
 
   return (
-    <PokemonTable manyPokemon={pokemonArray}/>
+    <div className='app'>
+      <PokemonTable manyPokemon={pokemonArray}/>
+    </div>
   )
 }
 

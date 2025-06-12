@@ -8,15 +8,24 @@ type Props = {
 // Displays each vaule inside object per single pokemon
 function PokemonCard({pokemon} : Props) {
 
-    const imageUrl = pokemon.sprites.other?.['official-artwork']?.front_default || pokemon.sprites.front_default;
-
     return (
             <>
             <div>{pokemon.id}</div>
             <div>{pokemon.name}</div>
-            {imageUrl && <img src={imageUrl} alt={`${pokemon.name} sprite`}/>}
+            <img src={pokemon.sprites.front_default} alt={`${pokemon.name}`} />
             <div>
-                {pokemon.types.type.name}
+                {pokemon.stats.map((stat, index) => (
+                    <div key={index}>
+                        {stat.stat.name}: {stat.base_stat}
+                    </div>
+                ))}
+            </div>
+            <div>
+                {pokemon.types.map((type, index) => (
+                    <div key={index}>
+                        {type.type.name}
+                    </div>
+                ))}
             </div>
             </>
     )

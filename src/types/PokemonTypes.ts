@@ -12,24 +12,29 @@ export type PokemonListResult = {
     url: string 
 }
 
-// Type for the detailed Pokemon data
-export type PokemonDetails = {
-    id: number,
-    name: string,
-    sprites: {
-        front_default: string,
-        other?: {
-            'official-artwork'?:{
-                front_default: string
-            }
-        }
-    }
-    types: {
-        type: {
-            name: string
-        }
+export type PokemonStat = {
+    base_stat: number,
+    stat: {
+        name: string
     }
 }
 
+export type PokemonType = {
+    type: {
+        name: string
+    }
+}
+
+// Type for the detailed Pokemon data
+export type SimplifiedPokemon = {
+    id: number,
+    name: string,
+    sprites: {
+        front_default: string
+    },
+    stats: PokemonStat[],
+    types: PokemonType[]
+}
+
 // For service return type
-export type PokemonService = PokemonDetails;
+export type PokemonService = SimplifiedPokemon;

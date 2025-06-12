@@ -1,17 +1,20 @@
 import axios from "axios";
 import { PokemonListResult, PokemonService } from "../types/PokemonTypes";
+import { transformPokeData } from "../utils/TransformPokeData";
 
 export const getManyPokemon = async (): Promise<PokemonService[]> => {
     try {
-        // Fetch the list of Pokemon
-        const listResponse = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=5`);
+        //Fetching the list of pokemon
+        const listResponse = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=4`);
         const pokemonList: PokemonListResult[] = listResponse.data.results;
 
-        // Fetch details for each Pokmeon
+        // Fetch and 
         const pokemonDetails = await Promise.all(
-            pokemonList.map(async (pokmeon) => {
-                const detailsResponse = await axios.get(pokmeon.url);
-                return detailsResponse.data as PokemonService;
+            pokemonList.map(async (pokemon) => {
+                const detailsResponse = await axios.get(pokemon.url);
+                const data = detailsResponse.data
+
+                return transformPokeData(data)
             })
         );
 

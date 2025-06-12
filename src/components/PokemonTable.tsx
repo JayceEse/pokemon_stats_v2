@@ -9,9 +9,9 @@ type Props = {
 const PokemonTable = ({manyPokemon}: Props) => {
     // map each pokemon to a card in the table
   return (
-    <div>
+    <div >
         {manyPokemon.map((pokemon) => (
-            <PokemonCard pokemon={pokemon}/>
+            <PokemonCard key={pokemon.id} pokemon={pokemon}/>
         ))}
     </div>
   )
