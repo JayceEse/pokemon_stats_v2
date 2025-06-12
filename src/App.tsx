@@ -44,9 +44,10 @@ import { PokemonService } from './types/PokemonTypes'
 function App() {
 
   const [pokemonArray, setPokemonArray] = useState<PokemonService[]>([]) //this sets state
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const [loading, setLoading] = useState(true) // sets loading state
+  const [error, setError] = useState<string | null>(null) //sets error state
 
+  //Fetch data
   useEffect(() => {
     const fetchPokemon = async () => {
       try {
@@ -71,7 +72,7 @@ function App() {
 
   return (
     <div className='app'>
-      <PokemonTable manyPokemon={pokemonArray}/>
+      <PokemonTable manyPokemon={pokemonArray}/> 
     </div>
   )
 }

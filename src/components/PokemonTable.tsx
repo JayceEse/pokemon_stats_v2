@@ -6,8 +6,8 @@ type Props = {
     manyPokemon: PokemonService[]
 }
 
+// Passing data to component
 const PokemonTable = ({manyPokemon}: Props) => {
-    // map each pokemon to a card in the table
   return (
     <div >
         {manyPokemon.map((pokemon) => (
